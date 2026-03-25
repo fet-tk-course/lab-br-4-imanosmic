@@ -2,6 +2,8 @@
 # Datum: 25.03.2025
 # Lab 4 --- Python za FastAPI
 
+# zadatak 1
+
 student={"ime":"Amina","godina":3,"email":"ime.prezime@untz.ba"}
 
 # pristup vrijednosti
@@ -54,3 +56,25 @@ active:bool  # True ili False
 students:list  # lista
 data:dict  # rjecnik
 optional_year:int|None  # moze biti int ili None (opcionalno)
+
+# zadatak 2
+# Funkcija prima ime, godinu studija i email
+# i vraca rjecnik sa tim podacima i pozdravnom porukom
+def get_student_info(name:str,year:int,email:str)->dict:
+    # Kreira i vraca dictionary sa podacima o studentu
+    return {
+        # Cuva ime studenta
+        "name":name,
+        # Cuva godinu studija
+        "year":year,
+        # Cuva email studenta
+        "email":email,
+        # Kreira greeting poruku pomocu f-stringa
+        "greeting":f"Zdravo {name}, vi ste {year} godina studija"
+    }
+
+# Poziva funkciju sa primjerom podataka
+student_info=get_student_info("Amina",3,"amina@untz.ba")
+
+# Ispisuje rezultat funkcije
+print(student_info)
