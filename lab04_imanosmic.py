@@ -108,5 +108,34 @@ rezultat=info_o_studentu("Ana",3)
 print(rezultat)
 
 #zadatak 4
+# Klasa Course predstavlja jedan predmet
+class Course:
+    # Konstruktor prima naziv predmeta, sifru, broj kredita i ime profesora
+    def __init__(self,name:str,code:str,credits:int,professor:str):
+        # Cuvamo naziv predmeta u atribut objekta
+        self.name=name
+        # Cuvamo sifru predmeta u atribut objekta
+        self.code=code
+        # Cuvamo broj kredita u atribut objekta
+        self.credits=credits
+        # Cuvamo ime profesora u atribut objekta
+        self.professor=professor
+
+    # Metoda description vraca opis predmeta kao string
+    def description(self)->str:
+        # Vraca sifru, naziv, kredite i profesora u jednoj recenici
+        return f"{self.code} - {self.name} ({self.credits} kredita), profesor: {self.professor}"
+
+# Kreiramo prvu instancu klase Course
+course1=Course("Razvoj telekomunikacijske programske podrske","TK207",6,"Prof. Jasminko Sofo")
+
+# Kreiramo drugu instancu klase Course
+course2=Course("Osnove baza podataka","TK305",5,"Prof. Amila Hodzic")
+
+# Ispisujemo opis prvog predmeta
+print(course1.description())
+
+# Ispisujemo opis drugog predmeta
+print(course2.description())
 
 #zadatak 5
