@@ -78,3 +78,35 @@ student_info=get_student_info("Amina",3,"amina@untz.ba")
 
 # Ispisuje rezultat funkcije
 print(student_info)
+
+#zadatak 3
+# Dekorator koji prima funkciju kao argument
+def ispisi_poziv(func):
+    # Wrapper funkcija prima sve argumente originalne funkcije
+    def wrapper(*args,**kwargs):
+        # Ispisuje naziv funkcije prije njenog poziva
+        print(f"Pozivam: {func.__name__}")
+        # Poziva originalnu funkciju i vraca njen rezultat
+        return func(*args,**kwargs)
+    # Vraca wrapper funkciju
+    return wrapper
+
+# Dekorator se primjenjuje na funkciju info_o_studentu
+@ispisi_poziv
+def info_o_studentu(ime:str,godina:int)->dict:
+    # Vraca rjecnik sa podacima o studentu i porukom
+    return {
+        "ime":ime,
+        "godina":godina,
+        "greeting":f"Zdravo {ime}, vi ste {godina} godina studija"
+    }
+
+# Test poziv funkcije
+rezultat=info_o_studentu("Ana",3)
+
+# Ispis rezultata
+print(rezultat)
+
+#zadatak 4
+
+#zadatak 5
