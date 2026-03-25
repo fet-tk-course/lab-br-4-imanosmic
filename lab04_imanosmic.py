@@ -139,3 +139,32 @@ print(course1.description())
 print(course2.description())
 
 #zadatak 5
+
+# Lista studentskih rjecnika sadrzi podatke o vise studenata
+students=[
+    {"name":"Amina","year":3,"email":"amina@untz.ba"},
+    {"name":"Emir","year":2,"email":"emir@untz.ba"},
+    {"name":"Lejla","year":3,"email":"lejla@untz.ba"},
+    {"name":"Haris","year":1,"email":"haris@untz.ba"}
+]
+
+# Funkcija filter_by_year prima listu studenata i godinu studija
+def filter_by_year(students:list,year:int)->list:
+    # Vraca novu listu samo sa studentima koji su trazena godina
+    return [student for student in students if student["year"]==year]
+
+# Funkcija print_registry prima listu studenata
+def print_registry(students:list)->None:
+    # Prolazi kroz svakog studenta u listi
+    for student in students:
+        # Ispisuje ime i email svakog studenta
+        print(f"Ime: {student['name']}, Email: {student['email']}")
+
+# Pozivamo funkciju filter_by_year za studente 3. godine
+treca_godina=filter_by_year(students,3)
+
+# Ispisujemo rezultat filtriranja
+print(treca_godina)
+
+# Ispisujemo registar svih studenata
+print_registry(students)
